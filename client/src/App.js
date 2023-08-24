@@ -9,7 +9,11 @@ import { useContext } from "react";
 import { Context } from "./context/Context"
 //I take from reactrouter
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import axios from 'axios';
 
+const instance = axios.create({
+  baseURL: process.env.REACT_APP_BACKEND_URL,
+});
 
 function App() {
 
