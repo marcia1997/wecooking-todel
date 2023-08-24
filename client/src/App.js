@@ -11,23 +11,8 @@ import { Context } from "./context/Context"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
-
-
-
 function App() {
-  const [message, setMessage] = useState("");
 
-  useEffect(() => {
-    fetch("https://wecooking-backend.onrender.com")
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message));
-  },[]);
-
-  return (
-  <div className="App">
-    <h1>{message}</h1>
-  </div>
-  );
   const {user} = useContext(Context);
   return (
     <Router>
