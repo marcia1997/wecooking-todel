@@ -8,6 +8,12 @@ const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categories");
 const multer = require("multer");
 const path = require("path");
+import axios from 'axios';
+
+const instance = axios.create({
+  baseURL: process.env.REACT_APP_BACKEND_URL,
+});
+
 
 //postman is going to be able to introduce json object inside  the body 
 dotenv.config();
