@@ -1,5 +1,4 @@
 const express = require("express");
-const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const authRoute = require("./routes/auth");
@@ -8,15 +7,6 @@ const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categories");
 const multer = require("multer");
 const path = require("path");
-
-app.use(cors(
-    {
-        origin: ["https://wecooking-todel.vercel.app"],
-        methods: ["POST", "GET"],
-        credentials: true
-    }
-));
-app.use(express.json())
 
 
 //postman is going to be able to introduce json object inside  the body 
