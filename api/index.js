@@ -11,7 +11,7 @@ const path = require("path");
 
 app.use(cors(
     {
-        origin: ["https://wecooking-todel.vercel.app/"],
+        origin: ["https://wecooking-todel.vercel.app"],
         methods: ["POST", "GET"],
         credentials: true
     }
