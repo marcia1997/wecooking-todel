@@ -9,6 +9,14 @@ const categoryRoute = require("./routes/categories");
 const multer = require("multer");
 const path = require("path");
 
+app.use(cors(
+    {
+        origin: ["https://wecooking-todel.vercel.app/"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
+app.use(express.json())
 
 
 //postman is going to be able to introduce json object inside  the body 
