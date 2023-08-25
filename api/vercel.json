@@ -1,6 +1,11 @@
 {
   "version": 2,
-  "builds": [{ "src": "your-build-command-here", "use": "@vercel/node" }],
+  "builds": [
+    {
+      "src": "npm run build",
+      "use": "@vercel/node"
+    }
+  ],
   "outputDirectory": "dist" 
+  
 }
-
