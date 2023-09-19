@@ -47,7 +47,7 @@
   "devDependencies": {
   "@babel/plugin-proposal-private-property-in-object": "^7.1.0"
 },
-  "proxy": "https://wecooking-back.onrender.com",
+  "proxy": "http://localhost:5000/api/",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "repository": {
