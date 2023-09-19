@@ -9,12 +9,8 @@ const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
 
-
-const backendApiUrl = "https://wecooking-back.onrender.com";
-
 // Create an instance of the Express application
 const app = express();
-axios.get(`${backendApiUrl}/api/endpoint`)
 
 // Load environment variables
 dotenv.config();
