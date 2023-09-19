@@ -1,9 +1,8 @@
 import "./post.css";
 import { Link } from "react-router-dom";
 
-const serverUrl = import.meta.env.VITE_SERVER_URL;
 export default function Post({ post }) {
-  const PF = `${serverUrl}/images`;
+  const PF = "http://localhost:5000/images/";
   return (
     <div className="post">
       {post.photo && <img className="postImg" src={PF + post.photo} alt="" />}

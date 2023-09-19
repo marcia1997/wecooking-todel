@@ -6,11 +6,10 @@ import { Context } from "../../context/Context";
 import "./singlePost.css";
 
 export default function SinglePost() {
-  const serverUrl = import.meta.env.VITE_SERVER_URL;
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const [post, setPost] = useState({});
-  const PF = `${serverUrl}/images`;
+  const PF = "http://localhost:5000/images/";
   const { user } = useContext(Context);
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
