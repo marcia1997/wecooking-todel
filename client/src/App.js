@@ -10,12 +10,20 @@ import { useContext } from "react";
 import { Context } from "./context/Context"
 //I take from reactrouter
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
- 
-const backendApiUrl = "https://wecooking-back.onrender.com";
+import { useEffect, useState } from "react";
+
+
 
 
 function App() {
-  axios.get(`${backendApiUrl}/api/posts`)
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    fetch("https://wecooking-back.onrender.com")
+      .then((res) => res.json())
+      .then((data) => setMessage(data.message));
+  },[]);
+
   const {user} = useContext(Context);
   return (
     <Router>
