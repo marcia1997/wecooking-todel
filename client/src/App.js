@@ -15,7 +15,7 @@ const backendApiUrl = "https://wecooking-back.onrender.com";
 
 
 function App() {
-  axios.get(`${backendApiUrl}/api/endpoint`)
+  axios.get(`${backendApiUrl}/api/posts`)
   const {user} = useContext(Context);
   return (
     <Router>
