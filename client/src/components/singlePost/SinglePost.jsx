@@ -11,7 +11,7 @@ export default function SinglePost() {
   const [post, setPost] = useState({});
   
   const PF = process.env.NODE_ENV === 'production' 
-    ? "https://wecooking-back.onrender.com/images/" 
+    ? "https://wecooking-back.onrender.com/api/images/" 
     : "http://localhost:5000/images/";
 
   const { user } = useContext(Context);
