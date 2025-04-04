@@ -7,7 +7,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 
-const backendApiUrl = "https://wecooking-back.onrender.com";
+const backendApiUrl = "https://wecooking-back.onrender.com/api"; 
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -16,10 +16,12 @@ export default function Home() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
+        console.log("Fetching posts with search:", search); // Debugging statement
         const res = await axios.get(`${backendApiUrl}/posts${search}`);
+        console.log("Fetched posts:", res.data); // Check the response data
         setPosts(res.data);
       } catch (err) {
-        console.error("Error fetching posts:", err);
+        console.error("Error fetching posts:", err.response ? err.response.data : err.message);
       }
     };
     fetchPosts();
