@@ -9,7 +9,7 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
 
-  const backendApiUrl = "https://wecooking-back.onrender.com"; // Asegúrate de usar la URL correcta del backend
+  const backendApiUrl = "https://wecooking-back.onrender.com"; 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
