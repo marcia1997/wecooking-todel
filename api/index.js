@@ -20,7 +20,7 @@ app.use(express.json());
 
 // CORS middleware
 const corsOptions = {
-  origin: "https://wecooking-front-e9qg.onrender.com", // frontend URI (ReactJS)
+  origin: "https://wecooking-front-e9qg.onrender.com", 
 };
 app.use(cors(corsOptions));
 
