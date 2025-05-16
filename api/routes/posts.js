@@ -1,8 +1,7 @@
 const router = require("express").Router();
 const User = require("../models/User");
 const Post = require("../models/Post");
-// Import the upload middleware
-const upload = require("../utils/upload");
+const upload = require("../utils/uploads");
 
 // CREATE POST (now with image upload)
 router.post("/", upload.single("image"), async (req, res) => {
