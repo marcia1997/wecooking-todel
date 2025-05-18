@@ -4,54 +4,63 @@ import { Link } from "react-router-dom";
 import "./sidebar.css";
 
 export default function Sidebar() {
-  const [cats, setCats] = useState([]);
-   
+  const [categories, setCategories] = useState([]);
+
   useEffect(() => {
-    const getCats = async () =>
-    {
-      const res = await axios.get("/categories");
-      setCats(res.data);    
-  };
-  getCats();
-},[]);
-   
-   return (
+    const fetchCategories = async () => {
+      try {
+        const res = await axios.get("https://wecooking-back.onrender.com/api/categories");
+        setCategories(res.data);
+      } catch (err) {
+        console.error("Failed to fetch categories:", err);
+      }
+    };
+    fetchCategories();
+  }, []);
+
+  return (
     <div className="sidebar">
       <div className="sidebarItem">
         <span className="sidebarTitle">ABOUT WECOOKING</span>
         <img
           src="https://data.whicdn.com/images/342019590/original.jpg"
-          alt=""
+          alt="About"
         />
         <p>
-        Hello,welcome to our blog,we are going to post each week differents easy and tasty recipes that you are going to love.
-      Also you are going to be able to upload your own recipes.
+          Hello! Welcome to our blog. Every week we’ll share new, easy, and delicious recipes that you're going to love.
+          You’ll also be able to upload and share your own creations!
         </p>
       </div>
+
       <div className="sidebarItem">
         <span className="sidebarTitle">CATEGORIES</span>
         <ul className="sidebarList">
-          {cats.map((c) => (
-            <Link to={`/?cat=${c.name}`}  className="link"> 
-            <li className="sidebarListItem">{c.name}</li>
+          {categories.map((category) => (
+            <Link
+              to={`/?cat=${category.name}`}
+              className="link"
+              key={category._id}
+            >
+              <li className="sidebarListItem">{category.name}</li>
             </Link>
           ))}
         </ul>
       </div>
+
       <div className="sidebarItem">
         <span className="sidebarTitle">FOLLOW US</span>
         <div className="sidebarSocial">
           <div className="facebook">
-          <i className="sidebarIcon fab fa-facebook-square"></i>
+            <i className="sidebarIcon fab fa-facebook-square"></i>
           </div>
           <div className="twitter">
-          <i className="sidebarIcon fab fa-twitter-square"></i>
+            <i className="sidebarIcon fab fa-twitter-square"></i>
           </div>
           <div className="pinterest">
-          <i className="sidebarIcon fab fa-pinterest-square"></i>
+            <i className="sidebarIcon fab fa-pinterest-square"></i>
           </div>
           <div className="instagram">
-          <i className="sidebarIcon fab fa-instagram-square"></i>
+            <i className="sidebarIcon fab fa-instagram-square"></i>
           </div>
         </div>
       </div>
