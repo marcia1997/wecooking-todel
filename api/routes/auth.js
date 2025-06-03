@@ -7,12 +7,11 @@ router.post("/register", async (req, res) => {
   try {
     console.log("👉 Incoming registration:", req.body);
 
-    // Validar campos mínimos
     if (!req.body.username || !req.body.email || !req.body.password) {
       return res.status(400).json("Missing required fields");
     }
 
-    // Verificar si el usuario ya existe (username o email)
+  
     const existingUser = await User.findOne({ username: req.body.username });
     if (existingUser) return res.status(400).json("Username already taken");
 
